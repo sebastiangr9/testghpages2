@@ -1,0 +1,17 @@
+
+<mat-toolbar color="primary" style="height: 5%;">
+
+<mat-form-field style="width: 90%;">
+    <input matInput [(ngModel)]="nameMovie" placeholder="Search Movie" (keydown.enter)="searchMovie()">
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="searchMovie()">
+    <i class="material-icons mdx2" style="color: white">search</i>
+    Search
+</button>
+</mat-toolbar>
+
+<div fxLayout="row wrap" style="background-color: black">
+        <div class="container" *ngFor="let Movie of Movie" (click)="onClick(Movie.id)">
+            <img  src="{{Movie.poster}}">
+        </div>
+</div> 

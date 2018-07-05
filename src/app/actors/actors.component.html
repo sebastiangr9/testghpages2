@@ -1,0 +1,18 @@
+
+<mat-toolbar color="primary" style="height: 5%;">
+
+<mat-form-field style="width: 90%;">
+    <input matInput [(ngModel)]="nameActor" placeholder="Search Actor" (keydown.enter)="searchActor()">
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="searchActor()">
+    <i class="material-icons mdx2" style="color: white">search</i>
+    Search
+</button>
+</mat-toolbar>
+
+<div fxLayout="row wrap" style="background-color: black">
+        <div class="container" *ngFor="let Actor of Actor" (click)="onClick(Actor.id)">
+            <img  src="{{Actor.profile_path}}">
+            <div class="bottom-left" style="background-color: black">{{Actor.name}}</div>
+        </div>
+</div> 

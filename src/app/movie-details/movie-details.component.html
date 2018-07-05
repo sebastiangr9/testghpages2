@@ -1,0 +1,34 @@
+<mat-card fxLayout="row">
+        <img fxFlexOffset="1%" src="{{movie.poster_path}}">
+        <div fxFlexOffset="2%">
+            <mat-card-content fxFlexOffset="2%">
+                <mat-tab-group>
+                    <mat-tab label="Overview"> {{movie.overview}}</mat-tab>
+                    <mat-tab label="Information"> 
+                        <h4>Genres:</h4>
+                        <div *ngFor="let genre of movie.genres">
+                            {{genre.name}}
+                        </div>
+                        
+                        <h4>Produced for:</h4>
+                        <div *ngFor="let proCom of movie.production_companies">
+                            {{proCom.name}}
+                        </div>
+                        <h4> Countries:</h4>
+                        <div *ngFor="let proCoun of movie.production_countries">
+                            {{proCoun.name}}
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card-content>
+        </div>
+</mat-card>
+
+<h2> Actors:</h2>
+<div fxLayout="row wrap" style="background-color: black">
+    <div class="container" *ngFor="let actor of actors" (click)="onClick(actor.id)">
+        <img class="img" src="{{actor.profile_path}}">
+        <div class="bottom-left" style="background-color: black"> {{actor.name}}, {{actor.character}}</div>
+    </div>
+</div> 
+

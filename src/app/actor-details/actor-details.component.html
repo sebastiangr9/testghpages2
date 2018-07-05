@@ -1,0 +1,24 @@
+<mat-card fxLayout="row">
+        <img fxFlexOffset="1%" src="{{actor.profile_path}}">
+        <div fxFlexOffset="2%">
+            <mat-card-content fxFlexOffset="2%">
+                <mat-tab-group>
+                    <mat-tab label="Biography"> {{actor.biography}}</mat-tab>
+                    <mat-tab label="Information"> 
+                        <h4>Name:</h4>
+                        {{actor.name}}
+                        <h4>Birthday:</h4>
+                        {{actor.birthday}}
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card-content>
+        </div>
+</mat-card>
+
+<h2> Movies:</h2>
+<div fxLayout="row wrap" style="background-color: black">
+    <div class="container" *ngFor="let movie of moviesActor" (click)="onClick(movie.id)">
+        <img class="img" src="{{movie.poster_path}}">
+        <div class="bottom-left" style="background-color: black">{{movie.character}}</div>
+    </div>
+</div> 

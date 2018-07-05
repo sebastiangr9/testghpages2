@@ -1,0 +1,6 @@
+<div fxLayout="row wrap" style="background-color: black">
+    <div class="container" *ngFor="let movies of newMovies" (click)="onClick(movies.id)">
+        <img  src="{{movies.backdrop_path}}">
+        <div class="bottom-left"> <h3> {{movies.title}}</h3></div>
+    </div>
+</div> 

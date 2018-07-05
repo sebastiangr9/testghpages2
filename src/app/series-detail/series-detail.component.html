@@ -1,0 +1,35 @@
+<mat-card fxLayout="row">
+    <img fxFlexOffset="1%" src="{{serie.poster_path}}">
+    <div fxFlexOffset="2%">
+        <mat-card-content fxFlexOffset="2%">
+            <mat-tab-group>
+                <mat-tab label="Overview"> {{serie.overview}}</mat-tab>
+                <mat-tab label="Information"> 
+                    Rate: {{serie.vote_average}}
+                    <h4>Genres:</h4>
+                    <div *ngFor="let genre of serie.genres">
+                        {{genre.name}}
+                    </div>
+                    <h4>Produced for:</h4>
+                    <div *ngFor="let proCom of serie.production_companies">
+                        {{proCom.name}}
+                    </div>
+                    <h4> Created by:</h4>
+                    <div *ngFor="let creator of serie.created_by">
+                        {{creator.name}}
+                    </div><br>
+                    Total episodes: {{serie.number_of_episodes}} <br>
+                    Seasons: {{serie.number_of_seasons}}
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+    </div>
+</mat-card>
+
+<h2> Actors:</h2>
+<div fxLayout="row wrap" style="background-color: black">
+    <div class="container" *ngFor="let actor of actors" (click)="onClick(actor.id)">
+        <img class="img" src="{{actor.profile_path}}">
+        <div class="bottom-left" style="background-color: black"> {{actor.name}}, {{actor.character}}</div>
+    </div>
+</div> 

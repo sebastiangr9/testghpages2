@@ -1,0 +1,35 @@
+.sebcard {
+    max-width: 200px;
+    min-width: 199px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+mat-card:hover {
+    background-color: lightgrey;
+}
+
+img{
+    max-width: 200px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+img:hover{
+    background-color: gray
+}
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+div{
+    margin: 0 auto;
+}
